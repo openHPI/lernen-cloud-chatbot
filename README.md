@@ -13,14 +13,7 @@ Choose the folder with the chatbot in German (rasa/lernen-cloud-de)
 ### Start the Rasa Server
 
 ```sh
-    rasa run --enable-api
-```
-
-### Start the Action Server
-
-```sh
-    cd actions/
-    rasa run actions
+    rasa run
 ```
 
 ## Docker

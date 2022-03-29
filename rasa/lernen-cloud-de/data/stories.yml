@@ -1,0 +1,68 @@
+version: '3.0'
+
+stories:
+
+- story: course costs
+  steps: 
+    - intent: ask_about_course_costs
+    - action: utter_course_costs
+
+- story: personal data
+  steps: 
+    - intent: ask_about_personal_data
+    - action: utter_personal_data
+
+- story: available languages
+  steps: 
+    - intent: ask_about_languages
+    - action: utter_languages
+
+- story: available certification
+  steps: 
+    - intent: ask_about_certification
+    - action: utter_certification
+
+- story: unenroll from courses
+  steps: 
+    - intent: ask_about_unenrollment
+    - action: utter_unenrollment
+
+- story: enroll to courses
+  steps: 
+    - intent: ask_about_enrollment
+    - action: utter_enrollment
+
+- story: ccourse ending
+  steps: 
+    - intent: ask_about_course_end
+    - action: utter_course_end
+
+- story: homework vs selftests
+  steps: 
+    - intent: ask_about_homework
+    - action: utter_homework
+
+- story: points in multiple choice questions
+  steps: 
+    - intent: ask_about_points
+    - action: utter_points
+
+- story: enroll to more courses
+  steps: 
+    - intent: ask_about_enroll_more_courses
+    - action: utter_enroll_more_courses
+
+- story: vacation and extention of deadlines
+  steps: 
+    - intent: ask_about_vacation
+    - action: utter_vacation
+
+- story: course material
+  steps: 
+    - intent: ask_about_course_materials
+    - action: utter_course_materials
+
+- story: contact
+  steps: 
+    - intent: ask_about_contact
+    - action: utter_contact

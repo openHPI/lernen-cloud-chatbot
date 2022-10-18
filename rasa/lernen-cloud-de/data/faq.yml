@@ -1,7 +1,7 @@
-version: '3.0'
+version: '3.1'
 
 nlu:
-  - intent: ask_about_course_costs
+  - intent: faq/course_costs
     examples: |
       - Ist lernen.cloud kostenlos?
       - Kostet die Teilnahme an Kursen Geld?
@@ -11,8 +11,10 @@ nlu:
       - Welche Zahlungsmöglichkeiten gibt es? 
       - Wie kann ich bezahlen? 
       - Ich habe kein Geld.
+      - Was kostet das
+      - Kosten
 
-  - intent: ask_about_personal_data
+  - intent: faq/personal_data
     examples: |
       - Was geschieht mit meinen personenbezogenen Daten?
       - Wie werden meine personenbezogenen Daten verarbeitet?
@@ -20,38 +22,43 @@ nlu:
       - Werden meine personenbezogenen Daten gespeichert?
       - Wer hat meine personenbezogenen Daten?
 
-  - intent: ask_about_languages
+  - intent: faq/languages
     examples: |
       - In welchen Sprachen werden die Kurse von LERNEN.cloud angeboten?
       - Welche Sprachen bietet LERNEN.cloud an?
       - In welcher Sprache sind die Kurse?
       - Sind die Kurse auf Detusch?
       - Ist die Kurssprache Deutsch?
+      - Welche Sprachen
+      - Sprachangebot
   
-  - intent: ask_about_certification
+  - intent: faq/certification
     examples: |
       - Kann ich bei LERNEN.cloud eine Bescheinigung erwerben?
       - Welche Beschinigung kann ich bei LERNEN.cloud erwerben?
       - Stellt LERNEN.cloud Bescheinigungen aus?
       - Gibt es Bescheinigungen?
       - Kann ich mir einen Kurs bescheinigen lassen?
-      - Bekomme ich eine Beschinigung?
+      - Bekomme ich eine Bescheinigung?
+      - Bescheinigung
   
-  - intent: ask_about_unenrollment
+  - intent: faq/unenrollment
     examples: |
       - Kann ich jederzeit aus dem LERNEN.cloud-Kurs aussteigen?
       - Ich möchte einen Kurs vorzeitig beenden
       - Ich möchte aus einem Kurs aussteigen
       - Muss ich jeden Kurs beenden?
       - Kann ich aus einem Kurs aussteigen?
+      - Aussteigen
 
-  - intent: ask_about_enrollment
+  - intent: faq/enrollment
     examples: |
       - Kann ich mich bei LERNEN.cloud auch noch anmelden, wenn der Kurs schon läuft?
       - Kann ich mich in einen laufenden Kurs einschreiben?
       - Der Kurs läuft schon, kann ich mich trotzdem noch einschreiben?
+      - Kurs einschreiben
   
-  - intent: ask_about_course_end
+  - intent: faq/course_end
     examples: |
       - Was passiert mit den Kursmaterialien von LERNEN.cloud nach Beendigung des Kurses?
       - Sind die Kursmaterialien auch nach Beendigung des Kurses verfügbar?
@@ -59,25 +66,26 @@ nlu:
       - Wie lang sind die Kursinhalte verfügbar?
       - Wie lange sind die Kursmaterialien nach Beeindigung verfügbar?
 
-  - intent: ask_about_homework
+  - intent: faq/homework
     examples: |
       - Was sind Selbsttests und Hausaufgaben und worin unterscheiden sich diese?
       - Was sind Selbsttests?
       - Was sind Hausaufgaben?
       - Wie unterscheiden sich Selbsttests und Hausaufgaben?
   
-  - intent: ask_about_points
+  - intent: faq/points
     examples: |
       - Wie ergibt sich meine Punktzahl bei Multiple Choice / Multiple Answer-Aufgaben?
       - Wie entsteht meine Punktezahl bei Multiple Choice Aufgaben?
       - Bekomme ich alle Punkte bei Multiple Choice Aufgaben?
       - Wie bekomme ich Punkte bei Multiple Choice Aufgaben?
 
-  - intent: ask_about_enroll_more_courses
+  - intent: faq/enroll_more_courses
     examples: |
       - Ich möchte mich für weitere LERNEN.cloud-Kurse anmelden. Wie kann ich das tun?
+      - Wie kann ich mich für weitere LERNEN.cloud Kurse anmelden?
   
-  - intent: c
+  - intent: faq/vacation
     examples: |
       - Ich kann nicht am ganzen Kurs teilnehmen, weil ich im Urlaub bin. Kann ich trotzdem die Bescheinigung erwerben?
       - Ich kann nicht am gaznen Kurs teilnehmen
@@ -87,7 +95,7 @@ nlu:
       - Kann ich die Abgabefrist verlängern?
       - Ich brauche eine Verlängerung der Abgabefrist
 
-  - intent: ask_about_course_materials
+  - intent: faq/course_materials
     examples: |
       - Wo finde ich die Kursmaterialien?
       - Wo sind die Kursmaterialien?
@@ -96,7 +104,7 @@ nlu:
       - Wo sind die Kursinhalte?
       - Wo finde ich die Kursinhalte?
 
-  - intent: ask_about_contact
+  - intent: faq/contact
     examples: |
       - Wie kann ich das LERNEN.cloud-Team kontaktieren?
       - Wie kann ich LERNEN.cloud kontaktieren?

@@ -1,42 +1,121 @@
-version: '3.0'
-
+version: '3.1'
+forms:
+  course_form:
+    ignored_intents: []
+    required_slots:
+      - current_course_title
 intents:
 - deny
 - affirm
-- ask_about_course_costs
-- ask_about_personal_data
-- ask_about_languages
-- ask_about_certification
-- ask_about_unenrollment
-- ask_about_enrollment
-- ask_about_course_end
-- ask_about_homework
-- ask_about_points
-- ask_about_enroll_more_courses
-- ask_about_vacation
-- ask_about_course_materials
-- ask_about_contact
+- faq
+- get_course
+- get_achievements
+- get_courses
+- help
+- out_of_scope
+- bot_challenge
+- human_handoff
+- insults
 
+actions:
+- action_get_courses
+- action_get_courses_buttons
+- action_get_achievements
+- action_course_set
+- action_set_current_course
+- action_download_certificate
+
+entities:
+- certificate_type
+- Course
+- country
+
+slots:
+  all_courses:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+  current_course_title:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: Course
+      conditions:
+      - active_loop: course_form
+        requested_slot: current_course_title
+    - type: from_text
+      not_intent:
+      - faq
+      - affirm
+      - deny
+      conditions:
+      - active_loop: course_form
+        requested_slot: current_course_title
+    - type: from_entity
+      entity: Course
+  current_course:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+  current_achievements:
+    type: list
+    influence_conversation: false
+    mappings:
+    - type: custom
+  course-set:
+    type: bool
+    mappings:
+    - type: custom
+  current_course_achieved:
+    type: bool
+    mappings:
+    - type: custom
+  courses_available:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: custom
 session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  session_expiration_time: 5
+  carry_over_slots_to_new_session: false
 
 responses:
-  utter_course_costs:
+  utter_submit:
+  - text: Verstanden!
+  utter_download_certificate:
+  - text: Möchten Sie das Zertifikat herunterladen?
+  utter_ask_which_course:
+  - text: Bitte wählen Sie einen Kurs aus für den Sie Ihre Leistung erhalten möchten.
+  utter_out_of_scope:
+  - text: 'Tut mir leid, das kann ich leider nicht beantworten. Benutzen Sie gerne unser Kontaktformular, um Ihre Frage zu stellen oder tippen Sie "Hilfe". ' 
+  utter_use_contact_form:
+  - text: Sie können auch das Kontaktformular nebenan verwenden, um Hilfe zu erhalten. Wir werden versuchen, Ihnen so schnell wie möglich zu antworten.
+  utter_have_a_nice_day:
+  - text: Habn Sie noch einen schönen Tag und bis bald!
+  utter_bye:
+  - text: Auf Wiedersehen!
+  utter_more_info:
+  - text: Okay. Wie kann ich Ihnen weiterhelfen?
+  utter_anything_else:
+  - text: Kann ich Ihnen noch mit etwas anderem behilflich sein?
+  utter_faq/course_costs:
   - text: Die Kurse sind kostenfrei.
-  utter_personal_data:
+  utter_faq/personal_data:
   - text: Das Hasso-Plattner-Institut unterliegt dem <a href="https://www.gesetze-im-internet.de/bdsg_2018/">Bundesdatenschutzgesetz</a>, da die Server, auf denen Nutzerdaten gespeichert sind, in Deutschland stehen. Es erfolgt keine Weitergabe von personenbezogenen Daten an Dritte. Zur Verbesserung der Plattform und zur Auswertung für wissenschaftliche Zwecke werden ausschließlich pseudonymisierte Daten verwendet. Weitere Informationen zum Datenschutz auf LERNEN.cloud finden Sie <a href="https://lernen.cloud/pages/data-protection">hier</a>.
-  utter_languages:
+  utter_faq/languages:
   - text: Die Kurse werden zunächst in deutscher Sprache angeboten, ohne dass auszuschließen ist, dass es Kurse in weiteren Sprachen geben wird. Die entsprechende Information finden Sie auf der Einführungsseite zu einem Kurs. Die Hausarbeiten für eine Woche werden ebenfalls am Montag veröffentlicht und müssen bis zum Montag der darauffolgenden Woche gelöst und eingereicht werden.
-  utter_certification:
+  utter_faq/certification:
   - text: Für die Teilnahme an einem Kurs stellen wir gerne eine Bescheinigung aus, die Voraussetzungen dafür sind in den Informationen zu einem Kurs vermerkt. Inwiefern diese für Lehrkräfte in irgendeiner Form als Fortbildung anrechenbar ist, wird mit den Kultusministerien der jeweiligen Länder noch geklärt.
-  utter_unenrollment: 
+  utter_faq/unenrollment: 
   - text: Ein Ausstieg ist jederzeit möglich. Sie können Sich von einem Kurs abmelden, indem Sie auf der Kursdetail-Seite den Knopf Kursteilnahme beenden benutzen. Dies ist aber nicht unbedingt notwendig.
-  utter_enrollment:
+  utter_faq/enrollment:
   - text: In der Regel sollte die Anmeldung zu einem Kurs vor dessen Start, allenfalls in der ersten Kurswoche erfolgen. Es wird nämlich bei einem verspäteten Einstieg in den Kurs immer schwieriger, die notwendige Punktzahl für den Erwerb des Zeugnisses zu erreichen. Auch die Anforderungen für eine reine Teilnahmebescheinigung können nicht mehr erfüllt werden, wenn Sie erst gegen Ende des Kurses einsteigen. Sie können sich trotzdem jederzeit für den Kurs anmelden, und auf alle Materialien zugreifen. Nach Ablauf des Kurses wird für die Beschäftigung mit den Kursmaterialien keine Bescheinigung mehr ausgestellt.
-  utter_course_end:
+  utter_faq/course_end:
   - text: Nach dem Ende eines Kurses bleiben die Kursinhalte auch weiterhin im Netz verfügbar. Lediglich das Zeugnis kann dann nicht mehr erworben werden.
-  utter_homework:
+  utter_faq/homework:
   - text: Selbsttests sind kurze Multiple-Choice Quizzes, die direkt auf ein Video oder einen Text folgen. Zweck der Selbsttests ist es, das Verständnis des gerade erworbenen Wissens selbst zu überprüfen. Diese zählen nicht für das Zeugnis und können beliebig oft wiederholt werden. Hausaufgaben müssen hingegen bis zu einer bestimmten (meist wöchentlichen) Abgabefrist bearbeitet werden und sind Voraussetzung für den Erwerb eines Kurszeugnisses.
           Je nach Kurs können außerdem weitere Aufgaben Bestandteil einer Kurswoche sein. Diese dienen der praktischen Anwendung der erworbenen Kenntnisse und können wie etwa im Falle unserer Programmieraufgaben über externe Tools an die Plattform angebunden sein. Durch die Bearbeitung dieser Aufgaben können ebenfalls Punkte erworben werden.
           Mehr Informationen zu den verwendeten Aufgaben, ihren Abgabefristen sowie deren Bedeutung für den Erwerb eines Zertifikates finden Sie auf den Seiten des jeweiligen Kurses.
@@ -46,13 +125,13 @@ responses:
 
           In einem Kurs können maximal 100 Prozent erreicht werden.
           Sollten Sie inklusive Bonuspunkte auf über 100 Prozent kommen, werden die überschüssigen Punkte gekappt.
-  utter_points:
+  utter_faq/points:
   - text: "Bei Multiple-Choice-Aufgaben gibt es genau eine richtige Antwort. Wird diese richtig ausgewählt, erhält der Teilnehmer die angegebene Punktzahl für die Aufgabe. Wird die falsche Antwort angeklickt, erhält der Teilnehmer 0 Punkte für diese Aufgabe. Bei Multiple-Answer-Aufgaben werden die erreichten Punkte bei teilweise richtigen Lösungen, auf folgende Weise berechnet: Die maximale Punkteanzahl wird durch die Anzahl der richtigen Alternativen dividiert. Dieser Wert wird als Basis verwendet. Für jede richtige Alternative, die korrekt ausgewählt wurde, wird der Basiswert vergeben, für jede falsche Alternative wird der Basiswert abgezogen. Ist das Gesamtergebnis negativ, werden 0 Punkte vergeben. Beispiel: Für eine Aufgabe werden maximal 3 Punkte vergeben. Von fünf Antworten sind drei richtig. Der Teilnehmer hat zwei richtige und eine falsche angekreuzt. Für die beiden Richtigen erhält er jeweils einen Punkt (3 dividiert durch 3), für die falsche wird ebenfalls ein Punkt abgezogen. Er oder sie erhält für die Aufgabe einen Punkt."
-  utter_enroll_more_courses:
+  utter_faq/enroll_more_courses:
   - text: Wenn Sie bei der Registrierung vergessen haben, sich für einen Kurs einzuschreiben, ist das kein Problem. Sie können nach dem Anmelden der Beschreibung in der Kurzanleitung folgen.
-  utter_vacation:
+  utter_faq/vacation:
   - text: Leider können wir, sollte ein Kurs sich darauf stützen, für die Hausarbeiten keine Verlängerungen der Abgabefristen einräumen. Wenn Sie es daher in einer Kurswoche nicht schaffen, die Hausarbeit rechtzeitig abzugeben, müssen Sie in den darauf folgenden Wochen dementsprechend mehr Punkte erreichen, um die notwendige Gesamtpunkteanzahl für den Kurserfolg zu erreichen.
-  utter_course_materials:
+  utter_faq/course_materials:
   - text: "Von der Kursliste oder von Ihrem Dashboard aus gelangen Sie in die einzelnen Kurse. Dort finden Sie die Materialien unter dem Reiter 'Kursinhalte'. Die Inhalte sind dort wie folgt aufgebaut:
           Auf der linken Seite befindet sich die Kursnavigation - mit dieser können Sie durch die Kurswochen navigieren. Da die Kurswochen auf LERNEN.cloud erst nach und nach freigeschaltet werden, sind nicht immer alle Wochen aktiv.
           In der Kursnavigation finden Sie in der aktiven Woche (Woche 1 in der Grafik) auch immer einige Links für den Schnellzugriff, bspw. auf die Hausaufgabe, die Lesematerialien oder die Diskussionen der jeweiligen Kurswoche.
@@ -60,7 +139,21 @@ responses:
           Die aktive Lerneinheit wird durch einen roten Balken oberhalb des Symbols gekennzeichnet.
           Bereits besuchte Lerneinheiten haben einen hellgrauen Hintergrund und heben sich damit von den nicht besuchten ab.
           Der Titel einer Lerneinheit erscheint als Kurzinfo oberhalb des Symbols, wenn man mit dem Mauszeiger darüber verharrt."
-  utter_contact:
+  utter_faq/contact:
   - text: Sollten Sie auf unseren LERNEN.cloud-Seiten und im FAQ keine Antworten auf Ihre Fragen gefunden haben, so bitten wir Sie, uns über den orangefarbenen Helpdesk Knopf auf der rechten Bildschirmseite zu kontaktieren.
-  utter_out_of_scope:
-  - text: Tut mir leid, diese Anfrage kann ich nicht bearbeiten.
+  utter_help:
+  - text: Ich helfe Ihnen gerne bei technischen Problemen und Fragen zu den Kursen. Ich erkläre Ihnen zum Beispiel den Kursaufbau und beantworte Fragen zum Zertifikat, zum Zurücksetzen des Passworts oder zum Ändern Ihrer persönlichen Daten. 
+  utter_default:
+  - text: Das habe ich nicht ganz verstanden. Könnten Sie das umformulieren?
+  utter_iamabot:
+  - text: Ich bin Ihr virtueller Assistent. 
+  utter_ask_handoff:
+  - text: Wollen Sie lieber mit unserem Helpdesk-Team sprechen?
+  utter_handoff:
+  - text: 'Um mit unserem Helpdesk-Team zu sprechen, klicken Sie auf den Reiter "Kontaktformular" und beschreiben Sie uns Ihr Anliegen dort kurz. Das Helpdesk-Team wird sich zeitnah bei Ihnen melden.'
+  utter_insults:
+  - text: "Bitte achten Sie etwas besser auf Ihre Wortwahl! Ich bin zwar nur eine Maschine, aber ich habe auch Gefühle!!"
+  utter_feedback:
+  - text: "Hab ich Ihnen bei Ihrem Anliegen helfen können?"
+  utter_thankyou_feedback:
+  - text: "Vielen Dank für Ihr Feedback!"

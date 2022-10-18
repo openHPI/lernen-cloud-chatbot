@@ -256,21 +256,25 @@ nlu:
       - Lassen Sie mich bitte mit einer realen Person sprechen
       - Ich möchte mit einer realen Person sprechen
 
-  - lookup: Course
+  - intent: inform
     examples: |
-      - Erklärbares Maschinelles Lernen für Ingenieurwissenschaften
-      - Launchpad to Fundamental Questions on AI
-      - Schule macht KI
-      - Wegweisende Anwendungen fürs Web
-      - Wie das Web technisch funktioniert
-      - Programmieregen fürs Web
-      - Mensch-Maschine-Interaktion
-      - Robot Learning
-      - Den Daten auf der Spur - Der Process Mining Podcast
-      - Daten- und Algorithmenethik
-      - AutoML - Automated Machine Learning
-      - Einführung in die KI
-      - Erklärbares Maschinelles Lernen für Ingenieurwissenschaften
-      - Schule macht Daten
-      - Dr. med. KI
-      - Team Peer Assessments
+      - Unterricht mit der dBildungscloud - 2022
+      - iPad-Basiskurs für Lehrkräfte
+      - Good Practice Beispiele aus der dBildungscloud
+      - Tools für den Unterricht
+      - Die dBildungscloud für Eltern und Kinder
+      - Virtuelle Klassenzimmer durch Videochats
+      - Distanzunterricht mit der dBildungscloud
+      - Wie programmiere ich meinen ersten Mini-Computer?
+      - Calliope mini in der Sekundarstufe I einsetzen
+      - Java - Objektorientierte Programmierung für Schüler:innen
+      - Python - Spielend Programmieren lernen für Schüler:innen
+      - OER Brandenburg
+      - Masterclass - Was Lehrern hilft (und Schülern auch)
+      - Blended Learning am Beispiel der Schul-Cloud Brandenburg
+      - Grundlagen der Leitidee Zahlen und Operationen in der Grundschule - Teil 1
+      - LERNEN.cloud-Forum 2022: Sich digital fortbilden? Qualitativ und nachhaltig!
+      - Selbstlernkurs zur Masterclass 1 (Teil 1 Folgen 1-6)
+      - Grundlagen der Leitidee Raum und Form in der Grundschule
+      - "RESPEKT" – trotz neuer Lockerheit
+      - Grundlagen der DSGVO

@@ -10,3 +10,11 @@ services:
         - "12345:5005"
         # Server Port: 12345:5005
         # Local Port: 5005:5005
+    action_server:
+      build: 
+        context: ./rasa/lernen-cloud-de/actions
+      volumes:
+        - ./rasa/lernen-cloud-de/actions:/app/actions
+        - ./rasa/lernen-cloud-de/data:/app/data
+      ports:
+        - 5055:5055

@@ -13,6 +13,9 @@ nlu:
       - Ich habe kein Geld.
       - Was kostet das
       - Kosten
+      - Kostet eine Teilnahme an den LERNEN.cloud-Kursen Geld?
+      - Was kostet die Teilnahme an einem Kurs?
+      - Kostet eine Teilnahme was?
 
   - intent: faq/personal_data
     examples: |
@@ -31,6 +34,7 @@ nlu:
       - Ist die Kurssprache Deutsch?
       - Welche Sprachen
       - Sprachangebot
+      - In welcher Sprache werden die Kurse angeboten?
   
   - intent: faq/certification
     examples: |
@@ -51,11 +55,18 @@ nlu:
       - Kann ich aus einem Kurs aussteigen?
       - Aussteigen
 
-  - intent: faq/enrollment
+  - intent: faq/running_enrollment
     examples: |
       - Kann ich mich bei LERNEN.cloud auch noch anmelden, wenn der Kurs schon läuft?
       - Kann ich mich in einen laufenden Kurs einschreiben?
       - Der Kurs läuft schon, kann ich mich trotzdem noch einschreiben?
+
+  - intent: faq/enrollment
+    examples: |
+      - Wer kann sich bei LERNEN.cloud anmelden?
+      - Kann ich mich bei LERNEN.cloud anmelden?
+      - Wer kann sich anmelden?
+      - Kann ich mich zu dem Kurs anmelden?
       - Kurs einschreiben
   
   - intent: faq/course_end
@@ -110,3 +121,4 @@ nlu:
       - Wie kann ich LERNEN.cloud kontaktieren?
       - Ich möchte das Team kontaktieren
       - Ich möchte LERNEN.cloud anschreiben
+

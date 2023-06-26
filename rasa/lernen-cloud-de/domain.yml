@@ -119,7 +119,7 @@ responses:
   - text: Für die Teilnahme an einem Kurs stellen wir gerne eine Bescheinigung aus, die Voraussetzungen dafür sind in den Informationen zu einem Kurs vermerkt. Inwiefern diese für Lehrkräfte in irgendeiner Form als Fortbildung anrechenbar ist, wird mit den Kultusministerien der jeweiligen Länder noch geklärt.
   utter_faq/unenrollment: 
   - text: Ein Ausstieg ist jederzeit möglich. Sie können Sich von einem Kurs abmelden, indem Sie auf der Kursdetail-Seite den Knopf Kursteilnahme beenden benutzen. Dies ist aber nicht unbedingt notwendig.
-  utter_faq/enrollment:
+  utter_faq/running_enrollment:
   - text: In der Regel sollte die Anmeldung zu einem Kurs vor dessen Start, allenfalls in der ersten Kurswoche erfolgen. Es wird nämlich bei einem verspäteten Einstieg in den Kurs immer schwieriger, die notwendige Punktzahl für den Erwerb des Zeugnisses zu erreichen. Auch die Anforderungen für eine reine Teilnahmebescheinigung können nicht mehr erfüllt werden, wenn Sie erst gegen Ende des Kurses einsteigen. Sie können sich trotzdem jederzeit für den Kurs anmelden, und auf alle Materialien zugreifen. Nach Ablauf des Kurses wird für die Beschäftigung mit den Kursmaterialien keine Bescheinigung mehr ausgestellt.
   utter_faq/course_end:
   - text: Nach dem Ende eines Kurses bleiben die Kursinhalte auch weiterhin im Netz verfügbar. Lediglich das Zeugnis kann dann nicht mehr erworben werden.

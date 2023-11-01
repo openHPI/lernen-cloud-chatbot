@@ -112,7 +112,7 @@ responses:
   utter_faq/course_costs:
   - text: Die Kurse sind kostenfrei.
   utter_faq/personal_data:
-  - text: Das Hasso-Plattner-Institut unterliegt dem <a href="https://www.gesetze-im-internet.de/bdsg_2018/">Bundesdatenschutzgesetz</a>, da die Server, auf denen Nutzerdaten gespeichert sind, in Deutschland stehen. Es erfolgt keine Weitergabe von personenbezogenen Daten an Dritte. Zur Verbesserung der Plattform und zur Auswertung für wissenschaftliche Zwecke werden ausschließlich pseudonymisierte Daten verwendet. Weitere Informationen zum Datenschutz auf LERNEN.cloud finden Sie <a href="https://lernen.cloud/pages/data-protection">hier</a>.
+  - text: Das Hasso-Plattner-Institut unterliegt dem <a href="https://www.gesetze-im-internet.de/geng/__43.html">Bundesdatenschutzgesetz</a>, da die Server, auf denen Nutzerdaten gespeichert sind, in Deutschland stehen. Es erfolgt keine Weitergabe von personenbezogenen Daten an Dritte. Zur Verbesserung der Plattform und zur Auswertung für wissenschaftliche Zwecke werden ausschließlich pseudonymisierte Daten verwendet. Weitere Informationen zum Datenschutz auf LERNEN.cloud finden Sie <a href="https://lernen.cloud/pages/data-protection">hier</a>.
   utter_faq/languages:
   - text: Die Kurse werden zunächst in deutscher Sprache angeboten, ohne dass auszuschließen ist, dass es Kurse in weiteren Sprachen geben wird. Die entsprechende Information finden Sie auf der Einführungsseite zu einem Kurs. Die Hausarbeiten für eine Woche werden ebenfalls am Montag veröffentlicht und müssen bis zum Montag der darauffolgenden Woche gelöst und eingereicht werden.
   utter_faq/certification:

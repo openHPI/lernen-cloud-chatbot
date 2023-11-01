@@ -1,5 +1,10 @@
 # Created by https://www.gitignore.io/api/linux,macos,windows,visualstudio
 
+## pdf / docx
+
+*.pdf
+*.docx
+
 ## exclude models folder ##
 rasa/models/*
 
